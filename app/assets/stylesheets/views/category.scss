@@ -1,0 +1,40 @@
+.category-banner {
+background-image: asset-url("padi.jpeg");
+height: 50 vh;
+width: 100%;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: Avenir;
+font-size: 1.5rem;
+color: white;
+}
+
+.flex-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 80px;
+  font-family: Avenir;
+}
+
+.flex-child {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 30%;
+    height: 30%;
+    margin: 30px;
+    text-align: center;
+    flex: 0 0 400px;
+    font-family: Avenir;
+  }
+
+.title-font {
+  font-family: Avenir;
+  font-size: 1.5rem;
+}

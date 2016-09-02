@@ -1,0 +1,34 @@
+.footers {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 50px auto;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+  flex: 0 0 380px;
+  margin: 10px 10px;
+}
+
+.menu {
+  font-family: "Avenir", Roboto, Arial, "STHeiti", SimSun, sans-serif;
+  line-height: 40px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.footer .menu li .footer-title {
+    line-height: 2;
+    color: #ff6688;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

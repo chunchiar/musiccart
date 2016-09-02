@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 70%;
+        margin: auto;
+    }
+    </style>
+  </head>
+  <body>
+
+  <div class="container">
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li class="item1 active"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <%= image_tag "piano.jpeg" %>
+          <div class="carousel-caption">
+            <h3>Piano</h3>
+            <p>Be a pianist, make tons of money!</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag "padi.jpeg" %>
+          <div class="carousel-caption">
+            <h3>Guitar</h3>
+            <p>Be a guitarist, make some romance!</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag "ukulele.jpeg" %>
+          <div class="carousel-caption">
+            <h3>Ukulele</h3>
+            <p>Great dream start small</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag "studio.jpeg" %>
+          <div class="carousel-caption">
+            <h3>Whatever</h3>
+            <p>Whatever this may be.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="$('#myCarousel').carousel('prev')">
+        <span class = "icon-prev">
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="$('#myCarousel').carousel('next')">
+        <span class = "icon-next">
+      </a>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function(){
+      // Activate Carousel
+      $("#myCarousel").carousel();
+        interval: 2000
+      // Enable Carousel Indicators
+      $(".item1").click(function(){
+          $("#myCarousel").carousel(0);
+      });
+      $(".item2").click(function(){
+          $("#myCarousel").carousel(1);
+      });
+      $(".item3").click(function(){
+          $("#myCarousel").carousel(2);
+      });
+      $(".item4").click(function(){
+          $("#myCarousel").carousel(3);
+      });
+
+      // Enable Carousel Controls
+      $(".left").click(function(){
+          $("#myCarousel").carousel("prev");
+      });
+      $(".right").click(function(){
+          $("#myCarousel").carousel("next");
+      });
+  });
+  </script>
+
+  <div class="wrapper">
+     <div class="row-2 clearfix">
+       <div class="col-1-2">
+         <h2>Let's type something here</h2>
+         Better description to explain product origin, details and our service.
+       </div>
+       <div class="col-1-2">
+         <h2>Let's type something here</h2>
+         Better description to explain product origin, details and our service.
+       </div>
+     </div>
+     <div class="row-4 clearfix">
+       <div class="col-1-4">
+      </div>
+   </div><!-- /.wrapper -->
+  </body>
+</html>
