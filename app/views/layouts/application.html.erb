@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Musiccart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,31 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <% if notice %>
+      <div id="notification_wrapper">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% elsif alert %>
+      <div id="notification_wrapper">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+    <div id="header">
+      <%= render partial: 'partials/header' %>
+    </div>
+    <!-- <div id="message">
+      <%= render partial: 'partials/message' %>
+    </div> -->
+    <main>
+        <%= yield %>
+    </main>
+
+    <div id="footer">
+      <%= render partial: 'partials/footer' %>
+    </div>
+
   </body>
+
 </html>
