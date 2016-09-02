@@ -1,0 +1,115 @@
+
+.about-title {
+
+  background-image: asset-url("guitarback.jpeg");
+  height: 100vh;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Avenir;
+  color: white;
+}
+
+.about-content {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Avenir;
+  color: white;
+
+}
+
+.newsletter-title {
+  background-image: asset-url("macbook.jpeg");
+  width: calc(100vh-52px);
+  height: 300px;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: Avenir;
+  color: white;
+
+}
+
+.btn.btn-default {
+  background: #ff6688;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-family: Avenir;
+  color: #ffffff;
+  font-size: 1.15rem;
+  padding: 0.9rem 1.7rem 0.7rem;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 800px;
+
+}
+
+.flex-item {
+  flex: 0 0 auto;
+
+}
+
+.input-button {
+  background: #ff6688;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-family: Avenir;
+  color: #ffffff;
+  font-size: 1.0rem;
+  padding: 0rem 0.5rem 0rem;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.social {
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  flex: 1 0;
+
+}
+
+.title {
+  font-family: "Lucida Grande";
+  color: black;
+}
+
+.row {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.margin-top-100 {
+  margin-top: 100px;
+
+}
+
+.icon-settings {
+  align-items: center;
+}
