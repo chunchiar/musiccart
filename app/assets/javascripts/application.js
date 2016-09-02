@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#notification_wrapper').fadeOut("slow", function() {
+      $(this).remove();
+    })
+  }, 4500);
+});
