@@ -1,6 +1,7 @@
 /* grid */
 [class*="row-"] {
   margin-bottom: 20px;
+  display: flex;
 }
 [class*="row-"]:last-child {
   margin-bottom: 0;
@@ -23,10 +24,14 @@
     float: left;
     width: 50%;
   }
-  .col-1-4 {
+  .col-md-4 {
     float: left;
-    width: 25%;
+    width: 20%;
+    display: flex;
+  }
 
+  .col-md-3 {
+    width:auto;
   }
 
   /* 2 span rows */
@@ -38,9 +43,6 @@
   }
 
   /* 4 span rows */
-  .row-4 {
-    padding-left: 60px;
-  }
   .row-4 [class*="col-"]:first-child {
     margin-left: -60px;
   }
@@ -52,10 +54,5 @@
 
 }
 
-.product-title {
-  position: relative;
-  margin-top: 30px;
-  text-align: center !important;
-  align-items: center;
-  vertical-align: bottom;
+.product {
 }

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
-
-  has_many :review, through: :ordered_item
+  belongs_to :category
+  has_many :ordered_items
+  has_many :orders, through: :ordered_items
 
   validates :name, presence: true
   validates :description, presence: true
@@ -8,5 +9,6 @@ class Product < ApplicationRecord
   validates :sku, presence: true
   validates :brand, presence: true
   mount_uploader :image, ImageUploader
+
 
 end

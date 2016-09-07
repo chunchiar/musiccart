@@ -9,23 +9,20 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find_by(params[:id])
   end
 
   def create
     @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created'}
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      redirect_to product_path
+    else
+      render :new
     end
   end
 
-  def updated
+  def update
   end
 
   def destroy
@@ -34,7 +31,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:image,:name,:description,:price,:sku,:brand)
+    params.require(:product).permit(:image,:name,:description,:price)
   end
 
 end

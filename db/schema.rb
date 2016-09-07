@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902065427) do
+ActiveRecord::Schema.define(version: 20160903043447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,25 @@ ActiveRecord::Schema.define(version: 20160902065427) do
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.string   "image"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.integer  "ordered_item_id"
+  end
+
+  create_table "ordered_items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "product_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.decimal  "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -64,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160902065427) do
     t.string   "provider"
     t.string   "uid"
     t.string   "image"
+    t.boolean  "admin"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
