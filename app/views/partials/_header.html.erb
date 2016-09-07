@@ -19,10 +19,10 @@
                       <a href="#page-top"></a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="#">About Us</a>
+                      <%= link_to "About Us", about_path %>
                   </li>
                   <li>
-                      <a class="page-scroll" href="#">Store</a>
+                      <%= link_to "Store", products_path %>
                   </li>
                   <% if(!user_signed_in?) %>
                   <li>
@@ -39,7 +39,7 @@
                       </a>
                       <ul class="dropdown-menu transparent-menu">
                         <li><%= link_to "My Profile", edit_user_registration_path %></li>
-                        <li><a href="#">My Cart</a></li>
+                        <li><%= link_to "My Cart", cart_path %></li>
                         <li role="separator" class="divider"></li>
                         <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
                       </ul>

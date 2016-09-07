@@ -27,17 +27,18 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'devise'
-
+gem 'slim'
+gem 'gon'
 gem 'bcrypt', '~> 3.1.11'
 gem "bcrypt-ruby"
 gem 'mini_magick', '~> 3.5.0'
 gem 'carrierwave'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
-
+gem 'braintree'
+gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -49,6 +50,7 @@ gem 'omniauth-google-oauth2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry'
 end
 
 group :development do

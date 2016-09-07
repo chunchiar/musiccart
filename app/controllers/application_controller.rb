@@ -11,4 +11,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password) }
   end
 
+  private
+
+  def tally_cart_items
+
+    @total = 0
+    if cookies.permanent.encrypted.signed[:cart]
+      contents = JSON.parse(cookies.permanent.encrypted.signed[:cart])
+      contents.each do |id, quantity|
+        @total += quantity.to_i
+      end
+    end
+  end
+
 end

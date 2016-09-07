@@ -1,0 +1,14 @@
+<div class="product text-center">
+  <div id="product-image">
+    <%= image_tag product.image, class: "image-settings img-responsive center-block" %>
+  </div>
+    <h3><%= link_to product.name, products_path %></h3>
+    <h5><b><%= product.description %></b></h5>
+    <h5><b><%= number_to_currency product.price %></b></h5>
+    <h5><b><%= product.brand %></b></h5>
+
+    <%= form_tag(add_item_path(id: product.id), remote: true) do %>
+      <%= number_field_tag "quantity", nil, min: 1, max: 10 %>
+      <%= submit_tag "Add To Cart", class: "btn btn-primary" %>
+    <% end %>
+</div>

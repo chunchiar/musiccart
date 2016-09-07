@@ -1,0 +1,32 @@
+<div class= "cart-show" data-id="<%=product.id%>">
+  <%= form_tag(update_item_path(id: product.id), remote: true, method: :patch) do %>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= image_tag product.image, class: "img-settings img-responsive" %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <div> <%= product.name %> </div>
+          <%= number_field_tag :quantity, product.quantity, min: 1, value: product.quantity %>
+        </div>
+        <div class="item-price">
+          <%= number_to_currency(product.price, :unit => "RM") %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="line-price" data-id="<%=product.id%>">
+          <%= number_to_currency(product.price*product.quantity.to_i, :unit => "RM") %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= submit_tag "Update Item" %>
+          <%= link_to "Remove Item", remove_item_path(id: product.id), remote: true, method: :post %>
+        </div>
+      </div>
+    </div>
+  </div>
+ <% end %>
+</div>
