@@ -1,25 +1,29 @@
 <% if @products.nil? %>
-<div class="alert alert-danger">
-  <ul>
-    <% @products.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
+  <div class="alert alert-danger">
+    <ul>
+      <% @products.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <% if @products.size == 0 %>
+  <p class="empty-cart text-center">
+    There are no product in your shopping cart.  Please <%= link_to "go back", products_path %> and add some items to your cart.
+  </p>
+  <% else %>
+  <% @products.each do |product| %>
+  <%= render partial: "cart_item", locals: { product: product }, show_total: true %>
+  <% end %>
+<% end %>
+<div class="final-total row">
+  <div class="col-md-8"><b>Net Total</b></div>
+  <div class="col-md-4"><b><%= number_to_currency(@cart_total, :unit => "RM") %></b></div>
 </div>
-<% end %>
-<% if @products.size == 0 %>
-<p class="empty-cart text-center">
-  There are no product in your shopping cart.  Please <%= link_to "go back", products_path %> and add some items to your cart.
-</p>
-<% else %>
-<% @products.each do |product| %>
-<%= render partial: "cart_item", locals: { product: product }, show_total: true %>
-<% end %>
-<% end %>
 <div class="checkout">
   <div class="row">
-   <p align="right">
-    <%=link_to "Checkout", new_checkout_path, class: "button" %>
-   </p>
+    <p align="center">
+      <%=link_to "Checkout", new_checkout_path, class: "button" %>
+    </p>
   </div>
 </div>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :categories,only:[:index]
   resources :products,only:[:index,:new,:create,:edit,:destroy]
   resources :ordered_items, only:[:create, :update, :destroy]
-  resources :checkouts, only: [:new, :create]
+  resources :checkouts, only: [:new, :create, :index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

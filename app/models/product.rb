@@ -10,5 +10,11 @@ class Product < ApplicationRecord
   validates :brand, presence: true
   mount_uploader :image, ImageUploader
 
+  def total_price
+    total_price = 0
+    product.price * product.q
+    total_price
+  end
+
 
 end

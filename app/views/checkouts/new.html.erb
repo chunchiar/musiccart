@@ -1,0 +1,8 @@
+<div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+  <h2 class="mbs">Checkout</h2>
+  <%= form_tag checkouts_path do%>
+    <p>Kindly enter your payment details:</p>
+    <div id="dropin"></div>
+    <%=submit_tag "Pay #{}", class: "button mt1" %>
+  <%end%>
+</div>

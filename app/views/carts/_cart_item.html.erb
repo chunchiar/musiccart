@@ -16,14 +16,14 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="line-price" data-id="<%=product.id%>">
-          <%= number_to_currency(product.price*product.quantity.to_i, :unit => "RM") %>
-        </div>
-      </div>
-      <div class="col-md-3">
         <div class="form-group">
           <%= submit_tag "Update Item" %>
           <%= link_to "Remove Item", remove_item_path(id: product.id), remote: true, method: :post %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="line-price" data-id="<%=product.id%>">
+          <%= number_to_currency(product.price*product.quantity.to_i, :unit => "RM") %>
         </div>
       </div>
     </div>

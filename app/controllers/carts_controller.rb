@@ -37,7 +37,7 @@ class CartsController < ApplicationController
   end
 
   def show
-
+    @cart_total = 0
     @products = []
 
     if @cart_contents
@@ -50,7 +50,7 @@ class CartsController < ApplicationController
         product.define_singleton_method(:quantity) do
           quantity
         end
-
+        @cart_total += product.price * quantity.to_i
         @products << product
       end
     end
