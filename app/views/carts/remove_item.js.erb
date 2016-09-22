@@ -1,1 +1,2 @@
-$('.cart-product[data-id=<%=@deletable_id%>]').remove()
+$('.cart-show[data-id=<%=@deletable_id%>]').remove()
+$('#cart-total').html("<%= number_to_currency(@total, :unit => "RM") %>")

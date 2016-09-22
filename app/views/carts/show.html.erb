@@ -18,12 +18,18 @@
 <% end %>
 <div class="final-total row">
   <div class="col-md-8"><b>Net Total</b></div>
-  <div class="col-md-4"><b><%= number_to_currency(@cart_total, :unit => "RM") %></b></div>
+  <div class="col-md-4"><b>
+    <div id="cart-total">
+    <%= number_to_currency(@total, :unit => "RM") %>
+  </div>
+  </b></div>
 </div>
+<% if @products.size != 0 %>
 <div class="checkout">
   <div class="row">
     <p align="center">
-      <%=link_to "Checkout", new_checkout_path, class: "button" %>
+      <%=link_to "Checkout", new_checkout_path, class: "btn btn-block" %>
     </p>
   </div>
 </div>
+<% end %>

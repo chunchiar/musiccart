@@ -16,5 +16,4 @@ class Product < ApplicationRecord
     total_price
   end
 
-
 end

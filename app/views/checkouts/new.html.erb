@@ -3,6 +3,6 @@
   <%= form_tag checkouts_path do%>
     <p>Kindly enter your payment details:</p>
     <div id="dropin"></div>
-    <%=submit_tag "Pay #{}", class: "button mt1" %>
+    <%=submit_tag "Pay #{number_to_currency(@total, :unit => "RM")}", class: "button mt1" %>
   <%end%>
 </div>

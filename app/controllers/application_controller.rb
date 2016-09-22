@@ -19,7 +19,11 @@ class ApplicationController < ActionController::Base
     if cookies.permanent.encrypted.signed[:cart]
       contents = JSON.parse(cookies.permanent.encrypted.signed[:cart])
       contents.each do |id, quantity|
-        @total += quantity.to_i
+        product = Product.find_by(id: id)
+        if !product
+          next
+        end
+        @total += quantity.to_i * product.price
       end
     end
   end

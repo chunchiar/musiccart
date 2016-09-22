@@ -6,18 +6,21 @@ class CheckoutsController < ApplicationController
 
   def new
     gon.client_token = generate_client_token
+    tally_cart_items
   end
 
   def create
+    tally_cart_items
     nonce = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
-      :amount => "100.00",
+      :amount => @total,
       :payment_method_nonce => params[:payment_method_nonce]
     )
 
     if result.success?
         puts result.transaction.status
           flash[:notice] = "Transaction successful"
+          cookies.delete(:cart)
           redirect_to root_url
         else
           flash.now[:alert] = result.errors.to_json

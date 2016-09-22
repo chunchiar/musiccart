@@ -22,6 +22,7 @@ class CartsController < ApplicationController
     contents[params[:id]] = params[:quantity]
     cookies.permanent.encrypted.signed[:cart] = JSON.generate(contents)
     @line_price = params[:quantity].to_i * @product.price
+    tally_cart_items
   end
 
   def remove_item
@@ -34,15 +35,20 @@ class CartsController < ApplicationController
       cookies.permanent.encrypted.signed[:cart] = JSON.generate(contents)
     end
     @deletable_id = product_id
+    tally_cart_items
   end
 
   def show
-    @cart_total = 0
+    @total = 0
     @products = []
 
     if @cart_contents
-      contents = JSON.parse(@cart_contents)
-      contents.each do |product_id, quantity|
+      cart = JSON.parse(@cart_contents)
+      if !cart
+        return
+      end
+
+      cart.each do |product_id, quantity|
         product = Product.find_by(id: product_id)
         if !product
           next
@@ -50,7 +56,7 @@ class CartsController < ApplicationController
         product.define_singleton_method(:quantity) do
           quantity
         end
-        @cart_total += product.price * quantity.to_i
+        @total += product.price * quantity.to_i
         @products << product
       end
     end

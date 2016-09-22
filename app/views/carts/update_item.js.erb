@@ -1,1 +1,2 @@
-$('.line-price[data-id=<%=@product.id%>]').html("RM<%=@line_price%>")
+$('.line-price[data-id=<%=@product.id%>]').html("<%= number_to_currency(@line_price, :unit => "RM") %>")
+$('#cart-total').html("<%= number_to_currency(@total, :unit => "RM") %>")

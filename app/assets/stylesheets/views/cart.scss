@@ -1,10 +1,5 @@
 .empty-cart {
-  position: absolute;
-  height: 200px;
-  width: 400px;
-  margin: -100px 0 0 -200px;
-  top: 50%;
-  left: 50%;
+  margin-top: 200px;
 }
 
 .cart-show {
@@ -20,4 +15,8 @@
 
 .row {
   padding-top: 20px;
+}
+
+.final-total {
+  margin-top: 200px;
 }
